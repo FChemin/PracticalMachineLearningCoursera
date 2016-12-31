@@ -232,7 +232,7 @@ modFit &lt;- train(classe~., data = trainset, method=&quot;rf&quot;, trControl =
 ## Accuracy was used to select the optimal model using  the largest value.
 ## The final value used for the model was mtry = 6856.</code></pre>
 <pre class="r"><code>stopCluster(cl1)</code></pre>
-<p>The report shows us that <strong>the model accuracy is of 98.51%</strong>. We are ok with that and won’t make another model. Now we want to test the accuracy of our model on the validation set before using it to make our predictions on the test set:</p>
+<p>The report shows us that <strong>the model accuracy is of 98.04%</strong>. We are ok with that and won’t make another model. Now we want to test the accuracy of our model on the validation set before using it to make our predictions on the test set:</p>
 <pre class="r"><code>pred1 &lt;- predict(modFit, validationset[,1:85])
 confusionMatrix(pred1, validationset$classe)</code></pre>
 <pre><code>## $positive
@@ -281,7 +281,7 @@ confusionMatrix(pred1, validationset$classe)</code></pre>
 ## 
 ## attr(,&quot;class&quot;)
 ## [1] &quot;confusionMatrix&quot;</code></pre>
-<p>From the confusion matrix, we can see that the accuracy is equal to 98.73% and comprise in a 95% interval between 98.41% and 98.99%. <strong>We would expect the out-of-sample accuracy of the model to be below 98.41%, to account for overfitting in the model</strong>.</p>
+<p>From the confusion matrix, we can see that the accuracy is equal to 99.03% and comprise in a 95% interval between 98.75% and 99.27%. <strong>We would expect the out-of-sample accuracy of the model to be below 98.75%, to account for overfitting in the model</strong>.</p>
 </div>
 <div id="prediction-time" class="section level2">
 <h2>Prediction Time!</h2>
